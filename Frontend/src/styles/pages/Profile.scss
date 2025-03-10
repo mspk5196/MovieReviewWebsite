@@ -1,0 +1,63 @@
+.profile {
+    margin: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+
+    .profile_header {
+        background-color: #eeeeee;
+        padding: 20px;
+        border-radius: 10px;
+
+        h1 {
+            font-size: 16px;
+        }
+        span { 
+            color: red;
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        button {
+            margin-right: 20px;
+            margin-bottom: 20px;
+            background: #FF4742;
+            border: 1px solid #FF4742;
+            border-radius: 6px;
+            box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+            box-sizing: border-box;
+            color: #FFFFFF;
+            cursor: pointer;
+            display: inline-block;
+            font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+            font-size: 16px;
+            font-weight: 800;
+            line-height: 16px;
+            min-height: 40px;
+            outline: 0;
+            padding: 12px 14px;
+            text-align: center;
+            text-rendering: geometricprecision;
+            text-transform: none;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            vertical-align: middle;
+
+            &:hover {
+                background-color: initial;
+                background-position: 0 0;
+                color: #FF4742;
+            }
+
+            &:active {
+                cursor: default;
+                background-color: initial;
+                background-position: 0 0;
+                color: #FF4742;
+                opacity: .5;
+            }
+        }
+    }
+}

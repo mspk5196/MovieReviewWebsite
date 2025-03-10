@@ -1,0 +1,257 @@
+$primaryFontColor: white;
+$secondaryFontColor: black;
+// $backgroundColor: #d7d7d7;
+$backgroundColor: #121212;
+$cardBackground: #322e2e;
+// $cardBackground: #1e1e1e;
+$accentColor: #e50914;
+
+.HomeDiv {
+    margin: 80px 5px;
+    background-color: $backgroundColor;
+    border-radius: 5px;
+    padding: 20px;
+
+    *{
+        background-color: #121212;
+    }
+}
+.movies {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+        #tit {
+            color: $primaryFontColor;
+            font-family: fantasy;
+            font-size: 25px;
+            width: fit-content;
+        }
+    
+
+    .movieList {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        gap: 20px;
+        padding: 20px 10px 20px 0px;
+
+        .movie {
+            display: flex;
+            flex-direction: column;
+            min-width: 280px;
+            height: 680px;
+            background-color: $cardBackground;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+            &:hover {
+                transform: scale(1.05);
+                box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.2);
+            }
+
+            .movieImg {
+                background-color: $cardBackground;
+
+                img {
+                    width: 100%;
+                    height: 300px;
+                    border-radius: 10px;
+                    // object-fit: cover;
+                    transition: transform 0.3s ease;
+
+                    &:hover {
+                        transform: scale(1.02);
+                    }
+                }
+            }
+
+            .movieTitle {
+                margin-top: 10px;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                border-radius: 10px;
+                padding: 0px 10px;
+
+                p {
+                    font-size: 14px;
+                    font-family: 'Poppins', sans-serif;
+                    color: $primaryFontColor;
+
+
+                    span {
+                        font-size: 13px;
+                        font-weight: bold;
+                        color: $accentColor;
+                        background: rgba(255, 255, 255, 0.1);
+                        border-radius: 5px;
+                        padding: 3px 6px;
+                        transition: background 0.3s ease;
+
+                        &:hover {
+                            background: rgba(255, 255, 255, 0.2);
+                        }
+                    }
+                }
+            }
+
+            .movieSDesc {
+                margin-top: 10px;
+                font-size: 13px;
+                color: rgba(255, 255, 255, 0.8);
+                font-weight: bold;
+                font-family: 'Courier New', Courier, monospace;
+                text-wrap: wrap;
+                width: 250px;
+                border-radius: 10px;
+                padding: 0px 10px;
+               
+                #year {
+                    font-size: 12px;
+                    font-weight: 900;
+                    color: $primaryFontColor;
+                    background: $accentColor;
+                    border-radius: 5px;
+                    padding: 3px 6px;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
+.shows {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+        #tit {
+            color: $primaryFontColor;
+            font-family: fantasy;
+            font-size: 25px;
+            width: fit-content;
+        }
+    
+
+    .showsList {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        gap: 20px;
+        padding: 20px 10px 20px 0px;
+
+        .show {
+            display: flex;
+            flex-direction: column;
+            min-width: 280px;
+            height: 650px;
+            background-color: $cardBackground;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+            &:hover {
+                transform: scale(1.05);
+                box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.2);
+            }
+
+            .showImg {
+                background-color: $cardBackground;
+
+                img {
+                    min-width: 60%;
+                    height: 250px;
+                    border-radius: 10px;
+                    // object-fit: cover;
+                    transition: transform 0.3s ease;
+
+                    &:hover {
+                        transform: scale(1.02);
+                    }
+                }
+            }
+
+            .showTitle {
+                margin-top: 10px;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                border-radius: 10px;
+                padding: 0px 10px;
+
+                p {
+                    font-size: 14px;
+                    font-family: 'Poppins', sans-serif;
+                    color: $primaryFontColor;
+
+
+                    span {
+                        font-size: 13px;
+                        font-weight: bold;
+                        color: $accentColor;
+                        background: rgba(255, 255, 255, 0.1);
+                        border-radius: 5px;
+                        padding: 3px 6px;
+                        transition: background 0.3s ease;
+
+                        &:hover {
+                            background: rgba(255, 255, 255, 0.2);
+                        }
+                    }
+                }
+            }
+
+            .showSDesc {
+                margin-top: 10px;
+                border-radius: 10px;
+                padding: 0px 10px;
+                max-width:445px;
+
+                p {
+                    font-size: 14px;
+                    font-family: 'Poppins', sans-serif;
+                    color: $primaryFontColor;
+                }
+                #sDesc{
+                    font-size: 13px;
+                    color: rgba(255, 255, 255, 0.8);
+                    font-weight: bold;
+                    font-family: 'Courier New', Courier, monospace;
+                    text-wrap: wrap;
+                }
+                #es {
+                    font-size: 12px;
+                    font-weight: 900;
+                    color: $primaryFontColor;
+                    background: $accentColor;
+                    border-radius: 5px;
+                    padding: 3px 6px;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
