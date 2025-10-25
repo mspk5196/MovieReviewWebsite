@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import UserDetails from '../../components/UserDetails/UserDetails';
 import { Button, IconButton } from '@mui/material';
 import '../../styles/pages/Favorites.scss'
+const API_URL = process.env.VITE_API_URL;
 
 export default function Favorites() {
 
@@ -14,7 +15,7 @@ export default function Favorites() {
 
   const fetchFavouriteMovie = async (mail) => {
     try {
-      const res = await fetch(`http://localhost:8000/api/get-favourite-movie/${mail}`, {
+      const res = await fetch(`${API_URL}/get-favourite-movie/${mail}`, {
         method: "GET",
       });
       const dataMovie = await res.json();
@@ -26,7 +27,7 @@ export default function Favorites() {
 
   const fetchFavouriteShow = async (mail) => {
     try {
-      const res = await fetch(`http://localhost:8000/api/get-favourite-show/${mail}`, {
+      const res = await fetch(`${API_URL}/get-favourite-show/${mail}`, {
         method: "GET",
       });
       const dataShow = await res.json();
@@ -39,7 +40,7 @@ export default function Favorites() {
   const handleMovieDelete = async (id) => {
     console.log("Deleting movie with ID:", id);
     try {
-      const res = await fetch(`http://localhost:8000/api/delete-favourite-movie/${id}`, {
+      const res = await fetch(`${API_URL}/delete-favourite-movie/${id}`, {
         method: "DELETE",
       });
       const data = await res.json();
@@ -58,7 +59,7 @@ export default function Favorites() {
   const handleShowDelete = async (id) => {
     console.log("Deleting movie with ID:", id);
     try {
-      const res = await fetch(`http://localhost:8000/api/delete-favourite-show/${id}`, {
+      const res = await fetch(`${API_URL}/delete-favourite-show/${id}`, {
         method: "DELETE",
       });
       const data = await res.json();
@@ -88,7 +89,7 @@ export default function Favorites() {
           {movieDetail.map((movieDiv, i) => (
             <div key={i} className="movie-card">
               <div className="movie-img">
-                <img src={`http://localhost:8000/uploads/${movieDiv.Image}`} alt={movieDiv.MovieName} />
+                <img src={`${API_URL}/uploads/${movieDiv.Image}`} alt={movieDiv.MovieName} />
               </div>
               <div className="movie-info">
                 <h3>{movieDiv.MovieName}</h3>
@@ -109,7 +110,7 @@ export default function Favorites() {
           {showDetail.map((showDiv, i) => (
             <div key={i} className="movie-card">
               <div className="movie-img">
-                <img src={`http://localhost:8000/uploads/${showDiv.Image}`} alt={showDiv.ShowName} />
+                <img src={`${API_URL}/uploads/${showDiv.Image}`} alt={showDiv.ShowName} />
               </div>
               <div className="movie-info">
                 <h3>{showDiv.MovieName}</h3>

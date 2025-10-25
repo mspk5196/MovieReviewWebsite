@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { IconButton, Paper, Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import AdminYesNoDialog from '../../components/Datas/AdminYesNoDialog';
+const API_URL = process.env.VITE_API_URL;
 
 export default function Users() {
 
@@ -12,13 +13,13 @@ export default function Users() {
 
     const deleteData = async (id) => {
       fetchUserData();
-      
-          try {
-              const res = await fetch(`http://localhost:8000/api/delete-admin-user-data/${id}`, {
-                  method: "DELETE",
-                  headers: { "Content-Type": "application/json" },
-                  
-              });
+
+      try {
+          const res = await fetch(`${API_URL}/delete-admin-user-data/${id}`, {
+              method: "DELETE",
+              headers: { "Content-Type": "application/json" },
+
+          });
 
               if (!res.ok) {
                   throw new Error("HTTP Error");
@@ -34,7 +35,7 @@ export default function Users() {
     const fetchUserData = async () => {
         setUserData([]);
         try {
-            const res = await fetch("http://localhost:8000/api/fetch-user-data-atAdmin", {
+            const res = await fetch(`${API_URL}/fetch-user-data-atAdmin`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",

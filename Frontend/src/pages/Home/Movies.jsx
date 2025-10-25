@@ -4,6 +4,7 @@ import StarBorderIcon from '@mui/icons-material/StarBorder';
 import StarIcon from '@mui/icons-material/Star';
 import IconButton from '@mui/material/IconButton';
 import MoviePopup from '../../components/PopupDetails/MoviePopup';
+const API_URL = process.env.VITE_API_URL;
 
 export default function Movies() {
     const [movieDetail, setMovie] = useState([]);
@@ -14,7 +15,7 @@ export default function Movies() {
 
     const fetchSelectedMovie = async (itemId) => {
         try {
-            const res = await fetch(`http://localhost:8000/api/get-selected-movie/${itemId}`, {
+            const res = await fetch(`${API_URL}/api/get-selected-movie/${itemId}`, {
                 method: "GET",
             });
             const dataMovie = await res.json();
@@ -27,7 +28,7 @@ export default function Movies() {
 
     const fetchUploadedMovie = async () => {
         try {
-            const res = await fetch("http://localhost:8000/api/get-movie", {
+            const res = await fetch(`${API_URL}/api/get-movie`, {
                 method: "GET",
             });
             const dataMovie = await res.json();
@@ -48,7 +49,7 @@ export default function Movies() {
                 {movieDetail.map((movieDiv, i) => (
                     <div key={i} className='movie' onClick={() => {fetchSelectedMovie(movieDiv.ID); setPopupOpen(true);}}>
                         <div className='movieImg'>
-                            <img src={`http://localhost:8000/uploads/${movieDiv.Image}`} alt="Uploaded" />
+                            <img src={`${API_URL}/uploads/${movieDiv.Image}`} alt="Uploaded" />
                         </div>
                         <div className='movieTitle'>
                             <p>Movie name: <span>{movieDiv.MovieName}</span></p>

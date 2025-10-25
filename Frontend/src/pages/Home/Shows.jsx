@@ -4,6 +4,7 @@ import StarBorderIcon from '@mui/icons-material/StarBorder';
 import StarIcon from '@mui/icons-material/Star';
 import IconButton from '@mui/material/IconButton';
 import ShowPopup from '../../components/PopupDetails/ShowPopup';
+const API_URL = process.env.VITE_API_URL;
 
 export default function Shows() {
 
@@ -14,7 +15,7 @@ export default function Shows() {
 
     const fetchSelectedShow = async (itemId) => {
         try {
-            const res = await fetch(`http://localhost:8000/api/get-selected-show/${itemId}`, {
+            const res = await fetch(`${API_URL}/api/get-selected-show/${itemId}`, {
                 method: "GET",
             });
             const dataMovie = await res.json();
@@ -27,7 +28,7 @@ export default function Shows() {
 
     const fetchUploadedShows = async () => {
         try {
-            const res = await fetch("http://localhost:8000/api/get-shows", {
+            const res = await fetch(`${API_URL}/api/get-shows`, {
                 method: "GET",
             })
             const dataShows = await res.json();
@@ -49,7 +50,7 @@ export default function Shows() {
                 {showsDetail.map((showsDiv, i) => (
                     <div key={i} className='show' onClick={() => {fetchSelectedShow(showsDiv.ID); setPopupOpen(true);}}>
                         <div className='showImg'>
-                            <img src={`http://localhost:8000/uploads/${showsDiv.Image}`} alt="Uploaded" />
+                            <img src={`${API_URL}/uploads/${showsDiv.Image}`} alt="Uploaded" />
                         </div>
                         <div className='showTitle'>
                             <p>Show name: <span>{showsDiv.ShowName}</span></p>

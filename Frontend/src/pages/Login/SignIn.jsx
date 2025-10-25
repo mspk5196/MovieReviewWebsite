@@ -3,6 +3,7 @@ import '../../styles/pages/SignIn.scss'
 import { Button } from '@mui/material'
 import UserDetails from '../../components/UserDetails/UserDetails';
 import { useNavigate } from 'react-router-dom';
+const API_URL = process.env.VITE_API_URL;
 
 export default function SignIn() {
 
@@ -18,7 +19,7 @@ export default function SignIn() {
     const fetchUserData = async () => {
         setUserData([]);
         try {
-            const res = await fetch("http://localhost:8000/api/fetch-user-data", {
+            const res = await fetch(`${API_URL}/api/fetch-user-data`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
