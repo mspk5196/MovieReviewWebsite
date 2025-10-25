@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import '../../styles/pages/SignIn.scss'
 import { Button } from '@mui/material'
 import { useNavigate } from 'react-router-dom';
+const API_URL = process.env.VITE_API_URL;
 
 export default function SignUp() {
 
@@ -34,7 +35,7 @@ export default function SignUp() {
     }
   
     try {
-      const res = await fetch("http://localhost:8000/api/add-user-data", {
+      const res = await fetch(`${API_URL}/api/add-user-data`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -58,7 +59,7 @@ export default function SignUp() {
 
   const fetchUserData = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/fetch-user-data", {
+      const res = await fetch(`${API_URL}/api/fetch-user-data`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
